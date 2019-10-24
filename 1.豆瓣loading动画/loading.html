@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .mouth {
+      fill: none;
+      stroke: #00b51D;
+      stroke-width: 5px;
+      stroke-linecap: round;
+      stroke-dasharray: 44 44;
+      transform-origin: center;
+      animation: mouthAni 2.3s ease-out infinite;
+    }
+    .eye {
+      fill: none;
+      stroke: #00B51D;
+      stroke-width: 5px;
+      stroke-linecap: round;
+      stroke-dasharray: 0 66;
+      transform-origin: center;
+      animation: eyeAni 2.3s ease-in-out infinite;
+    }
+    @keyframes mouthAni {
+      40% {
+        stroke-dasharray: 44, 22;
+      }
+      80%, 100% {
+        transform: rotate(720deg);
+        stroke-dasharray: 44 44;
+      }
+    }
+    @keyframes eyeAni {
+      40% {
+        stroke-dasharray: 0, 77; /* 间隔缩短,长度还是0 */
+      }
+      80%, 100% {
+        transform: rotate(675deg);
+        stroke-dasharray: 0 66;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg width="100" height="100">
+    <circle class="mouth" cx="50" cy="50" r="14"></circle>
+    <circle class="eye" cx="50" cy="50" r="14"></circle>
+  </svg>
+</body>
+</html>
